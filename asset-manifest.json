@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/pixel-art/static/css/main.51bb7b33.css",
+    "main.js": "/pixel-art/static/js/main.1b43c0e2.js",
+    "static/js/453.0d20affb.chunk.js": "/pixel-art/static/js/453.0d20affb.chunk.js",
+    "index.html": "/pixel-art/index.html",
+    "main.51bb7b33.css.map": "/pixel-art/static/css/main.51bb7b33.css.map",
+    "main.1b43c0e2.js.map": "/pixel-art/static/js/main.1b43c0e2.js.map",
+    "453.0d20affb.chunk.js.map": "/pixel-art/static/js/453.0d20affb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.51bb7b33.css",
+    "static/js/main.1b43c0e2.js"
+  ]
+}
