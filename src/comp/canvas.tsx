@@ -165,15 +165,12 @@ export default function Canvas(): React.ReactElement {
         <Button
           onClick={() => 
             setPixels(
-              new Array(density * canvasHeight / 100)
-                .fill(new Array(density * canvasWidth / 100)
-                .fill('transparent'))
-              )
-            } style={{ height: '54px', width: '54px', display: 'grid', placeItems: 'center' }}>
+              Array.from({ length: density * canvasHeight / 100}).map(_ => Array.from({ length: density * canvasWidth / 100 }).fill('transparent') as string[])
+            )} style={{ height: '54px', width: '54px', display: 'grid', placeItems: 'center' }}>
           <img src='deleteIcon.svg' alt='Reset' className='h-8 w-8' />
         </Button>
         <Button onClick={() => {
-          let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${canvasWidth / density / 100} ${canvasHeight / density / 100}" width="${canvasWidth / density / 100}" height="${canvasHeight / density / 100}">`;
+          let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${canvasWidth / density} ${canvasHeight / density}" width="${canvasWidth}" height="${canvasHeight}">`;
           pixels.forEach((row, i) => {
             row.forEach((px, j) => {
               if (px === 'transparent' || px === '#0000') return;
