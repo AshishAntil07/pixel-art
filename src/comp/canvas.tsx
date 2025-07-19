@@ -167,10 +167,10 @@ export default function Canvas(): React.ReactElement {
             setPixels(
               Array.from({ length: density * canvasHeight / 100}).map(_ => Array.from({ length: density * canvasWidth / 100 }).fill('transparent') as string[])
             )} style={{ height: '54px', width: '54px', display: 'grid', placeItems: 'center' }}>
-          <img src='deleteIcon.svg' alt='Reset' className='h-8 w-8' />
+          <img src='deleteIcon.svg' alt='Reset' className='h-8 w-8 text-xs' />
         </Button>
         <Button onClick={() => {
-          let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${canvasWidth / density} ${canvasHeight / density}" width="${canvasWidth}" height="${canvasHeight}">`;
+          let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${canvasWidth * density / 100} ${canvasHeight * density / 100}" width="${canvasWidth}" height="${canvasHeight}">`;
           pixels.forEach((row, i) => {
             row.forEach((px, j) => {
               if (px === 'transparent' || px === '#0000') return;
@@ -185,7 +185,7 @@ export default function Canvas(): React.ReactElement {
           a.setAttribute('href', 'data:image/svg+xml,' + encodeURIComponent(svg));
           a.click();
         }} style={{ height: '54px', width: '54px', display: 'grid', placeItems: 'center' }}>
-          <img src="exportIcon.svg" alt="Export" className='h-8 w-8' />
+          <img src="exportIcon.svg" alt="Export" className='h-8 w-8 text-xs' />
         </Button>
       </div>
 
